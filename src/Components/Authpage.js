@@ -1,19 +1,14 @@
 import React from "react";
 
 function Authpage(props) {
-  const {  illusionbg } = props;
+  const {  bg } = props;
   return (
-    <div>
-      <div className="storyillusion my-3">
+      <div className="storyillusion my-3 flex justify-center  items-center">
 
-        <div className=" img" style={{ width: "400px" }}>
-          <img className="illusionpic" src={illusionbg} alt="" />
-          {/* <div className="castlepic">
-            <img className="castle" src={castle} alt="" />
-          </div> */}
+        <div className="w-3/5 img">
+          <img className="illusionpic" src={bg} alt="" />
         </div>
       </div>
-    </div>
   );
 }
 

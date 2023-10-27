@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import illusionbg from './illusionpng.png'
 import Authpage from "./Authpage";
+import bg from './bg.jpg'
 export default function Login({isMobileView}) {
   const [credentials, setcredentials] = useState({
     UserName: "",
@@ -23,9 +23,9 @@ const togglePasswordVisibility = () => {
 
   return (
     <>
-    <div className={`signuppage flex justify-around my-10 ${isMobileView ?'flex-col items-center':''}`}>
-    <div className="leftdesign ">
-      <Authpage  illusionbg={illusionbg} />
+    <div className={`signuppage flex justify-around ${isMobileView ?'flex-col items-center':''}`}>
+    <div className="leftdesign my-4">
+      <Authpage  bg={bg} />
     </div>
     <div
           className={` my-4 flex flex-col items-center ${isMobileView ?'w-3/4':'w-1/4'}`}

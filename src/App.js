@@ -28,7 +28,7 @@ function App() {
 
   return (
     <Router>
-    <div className="App">
+    <div className="App bg-blue-300">
       <Routes>
         <Route exact path="/" element={<Signup isMobileView={isMobileView}/>} />
         <Route exact path="/login" element={<Login isMobileView={isMobileView}/>} />

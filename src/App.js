@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import { Route,BrowserRouter as Router, Routes } from 'react-router-dom';
+import Signup from './Components/Singup';
+import Login from './Components/Login';
 
 function App() {
+  
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  const checkIsMobileView = () => {
+    const breakpoint = 768;
+
+    if (window.innerWidth < breakpoint) {
+      setIsMobileView(true);
+    } else {
+      setIsMobileView(false);
+    }
+  };
+
+  useEffect(() => {
+    checkIsMobileView();
+    window.addEventListener("resize", checkIsMobileView);
+    return () => {
+      window.removeEventListener("resize", checkIsMobileView);
+    };
+  }, []);
+
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route exact path="/" element={<Signup isMobileView={isMobileView}/>} />
+        <Route exact path="/login" element={<Login isMobileView={isMobileView}/>} />
+      </Routes>
     </div>
+  </Router>
   );
 }
 

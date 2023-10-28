@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Authpage from "./Authpage";
 import bg from './bg.jpg'
+import googlepng from './googlpng.png'
+
+
 export default function Login({isMobileView}) {
   const [credentials, setcredentials] = useState({
     Email: "",
@@ -30,17 +33,18 @@ const togglePasswordVisibility = () => {
     <div
           className={` my-4 flex flex-col items-center ${isMobileView ?'w-3/4':'w-1/4'}`}
         >
-          <h1 className="text-4xl my-4">Login to Your account</h1>
+          <h1 className="text-3xl my-4 font-semibold">Login to Your account</h1>
           <form class="w-full">
             <div class="mb-3 flex flex-col mt-5">
               <label for="name" class="flex text-xl font-medium text-gray-700">
-                Email:
+                Email
               </label>
               <input
                 type="mail"
-                class="form-input border border-gray-400 block w-full h-10 text-lg mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
+                class="form-input border border-gray-400 border-opacity-60 block w-full h-10 text-lg mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
                 id="name"
                 name="name"
+                placeholder="  name@example.com"
                 value={credentials.name}
                 onChange={onChange}
                 minLength={3}
@@ -53,14 +57,15 @@ const togglePasswordVisibility = () => {
                 for="password"
                 class="flex text-xl font-medium text-gray-700"
               >
-                Password:
+                Password
               </label>
               <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
-                class="form-input border border-gray-400 block w-full h-10 text-lg mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
+                class="form-input border border-gray-400 border-opacity-60 block w-full h-10 text-lg mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
                 id="password"
                 name="password"
+                placeholder="  password"
                 value={credentials.password}
                 onChange={onChange}
                 minLength={5}
@@ -75,25 +80,26 @@ const togglePasswordVisibility = () => {
 
             <button
               type="submit"
-              class={`btn block w-full mt-5 px-4 py-2 rounded-md bg-gradient-to-r from-blue-400 via-purple-500 to-blue-200 text-lg font-semibold hover:bg-blue-600`}
+              class={`btn block w-full mt-5 px-4 py-2 rounded-md bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200 text-lg font-semibold hover:bg-blue-600`}
             >
               Login
             </button>
           </form>{" "}
           <div className="my-5 w-full">
             <h3>
-              If you don't have an account, Sigup using
+              If you don't have an account,
               <Link className="mx-2 underline font-bold" to="/">
                 Signup
               </Link>
             </h3>
             <div className="googleauth my-4">
-              <h4 className="my-5">OR CONTINUE WITH</h4>
+              <h4 className="my-5 font-semibold">OR CONTINUE WITH</h4>
+              <div className="my-3 w-full h-0.5 bg-gray-400 opacity-70"></div>
               <button
                 type="submit"
-                class={`btn text-xl block w-full mt-1 px-4 py-2 rounded-md bg-gradient-to-r from-blue-400 via-purple-500 to-blue-200  font-semibold hover:bg-blue-600`}
+                class={`flex justify-center items-center btn text-xl w-full mt-1 px-4 py-2 rounded-md bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200  font-semibold hover:bg-blue-600`}
               >
-                Google
+                <span><img className="w-9" src={googlepng} alt="" /></span>Google
               </button>
               <p className=" my-4">By continuing you agree to our <span className="underline font-semibold cursor-pointer">Terms of Service</span> and <span className="underline font-semibold cursor-pointer">Privacy Policy</span></p>
             </div>

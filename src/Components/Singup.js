@@ -5,8 +5,7 @@ import bg from './bg.jpg'
 
 export default function Signup({isMobileView}) {
   const [credentials, setcredentials] = useState({
-    name: "",
-    UserName: "",
+    Email: "",
     cpassword: "",
     password: "",
   });

@@ -4,7 +4,7 @@ import Authpage from "./Authpage";
 import bg from './bg.jpg'
 export default function Login({isMobileView}) {
   const [credentials, setcredentials] = useState({
-    UserName: "",
+    Email: "",
     password: "",
   });
 //   const navigate = useNavigate();

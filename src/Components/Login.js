@@ -25,30 +25,32 @@ export default function Login({ isMobileView }) {
   return (
     <>
       <div
-        className={`signuppage flex justify-around ${
+        className={`signuppage flex-row-reverse flex justify-around ${
           isMobileView ? "flex-col items-center" : ""
         }`}
       >
-        <div className="leftdesign my-4">
+        <div className={`leftdesign my-4 ${
+            isMobileView ? "w-5/6" : "w-3/5"
+          } mx-3 flex justify-center  items-cente bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200 `}>
           <Authpage bg={bg} />
         </div>
         <div
-          className={` my-4 flex flex-col items-center ${
-            isMobileView ? "w-3/4" : "w-1/4"
+          className={` my-4 flex flex-col items-center mx-10 ${
+            isMobileView ? "w-3/4" : "w-2/5"
           }`}
         >
-          <h1 className="text-3xl my-4 font-semibold">Login to Your account</h1>
+          <h1 className="text-3xl my-4 font-semibold">Login to Your Account</h1>
           <form class="w-full mt-5">
             <div class="mb-3 flex flex-col ">
-              <label for="name" class="flex text-xl font-medium text-gray-700">
+              <label for="name" class="flex text-lg font-medium text-gray-700">
                 Email
               </label>
               <input
                 type="mail"
-                class="form-input border border-gray-400 border-opacity-60 block w-full h-10 text-lg mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
+                class="form-input border border-gray-400 border-opacity-60 block w-full h-10 px-1 mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
                 id="name"
                 name="name"
-                placeholder="  name@example.com"
+                placeholder="name@domain.com"
                 value={credentials.name}
                 onChange={onChange}
                 minLength={3}
@@ -59,17 +61,17 @@ export default function Login({ isMobileView }) {
             <div class="mt-5 mb-3 flex flex-col">
               <label
                 for="password"
-                class="flex text-xl font-medium text-gray-700"
+                class="flex text-lg font-medium text-gray-700"
               >
                 Password
               </label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
-                  class="form-input border border-gray-400 border-opacity-60 block w-full h-10 text-lg mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
+                  class="form-input border border-gray-400 border-opacity-60 block w-full h-10 px-1 mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
                   id="password"
                   name="password"
-                  placeholder="  Password"
+                  placeholder="Password"
                   value={credentials.password}
                   onChange={onChange}
                   minLength={5}
@@ -99,14 +101,17 @@ export default function Login({ isMobileView }) {
               </Link>
             </h3>
             <div className="googleauth my-4">
-              <h4 className="my-5 font-semibold">OR CONTINUE WITH</h4>
-              <div className="my-3 w-full h-0.5 bg-gray-400 opacity-70"></div>
+            <div className="flex justify-center items-center mt-8">
+                <span className="w-1/3 mx-2 h-0.5 bg-gray-400 opacity-70"></span>
+                <p className=" text-sm font-semibold"> OR CONTINUE WITH </p>
+                <span className=" w-1/3 mx-2 h-0.5 bg-gray-400 opacity-70"></span>
+              </div>
               <button
                 type="submit"
-                class={`flex justify-center items-center btn text-xl w-full mt-1 px-4 py-2 rounded-md bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200  font-semibold hover:bg-blue-600`}
+                class={`flex justify-center items-center btn text-lg w-full mt-5 px-4 py-2 rounded-md bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200  font-semibold hover:bg-blue-600`}
               >
                 <span>
-                  <img className="w-9" src={googlepng} alt="" />
+                  <img className="w-8" src={googlepng} alt="" />
                 </span>
                 Google
               </button>

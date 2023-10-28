@@ -1,41 +1,45 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Authpage from "./Authpage";
-import bg from './bg.jpg'
-import googlepng from './googlpng.png'
+import bg from "./bg.jpg";
+import googlepng from "./googlpng.png";
 
-
-export default function Login({isMobileView}) {
+export default function Login({ isMobileView }) {
   const [credentials, setcredentials] = useState({
     Email: "",
     password: "",
   });
-//   const navigate = useNavigate();
-const [showPassword, setShowPassword] = useState(false);
+  //   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
-const togglePasswordVisibility = () => {
-  setShowPassword(!showPassword);
-};
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   const onChange = (e) => {
     setcredentials({
       ...credentials,
       [e.target.name]: e.target.value,
     });
   };
- 
 
   return (
     <>
-    <div className={`signuppage flex justify-around ${isMobileView ?'flex-col items-center':''}`}>
-    <div className="leftdesign my-4">
-      <Authpage  bg={bg} />
-    </div>
-    <div
-          className={` my-4 flex flex-col items-center ${isMobileView ?'w-3/4':'w-1/4'}`}
+      <div
+        className={`signuppage flex justify-around ${
+          isMobileView ? "flex-col items-center" : ""
+        }`}
+      >
+        <div className="leftdesign my-4">
+          <Authpage bg={bg} />
+        </div>
+        <div
+          className={` my-4 flex flex-col items-center ${
+            isMobileView ? "w-3/4" : "w-1/4"
+          }`}
         >
           <h1 className="text-3xl my-4 font-semibold">Login to Your account</h1>
-          <form class="w-full">
-            <div class="mb-3 flex flex-col mt-5">
+          <form class="w-full mt-5">
+            <div class="mb-3 flex flex-col ">
               <label for="name" class="flex text-xl font-medium text-gray-700">
                 Email
               </label>
@@ -60,21 +64,23 @@ const togglePasswordVisibility = () => {
                 Password
               </label>
               <div className="relative">
-              <input
-                type={showPassword ? "text" : "password"}
-                class="form-input border border-gray-400 border-opacity-60 block w-full h-10 text-lg mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
-                id="password"
-                name="password"
-                placeholder="  Password"
-                value={credentials.password}
-                onChange={onChange}
-                minLength={5}
-                required
-              />
-              <button
-                onClick={togglePasswordVisibility}
-                className="absolute mt-1 top-1/2 right-2 transform -translate-y-1/2 cursor-pointer opacity-50"
-              ><i class="fa-solid fa-eye"></i></button>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  class="form-input border border-gray-400 border-opacity-60 block w-full h-10 text-lg mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
+                  id="password"
+                  name="password"
+                  placeholder="  Password"
+                  value={credentials.password}
+                  onChange={onChange}
+                  minLength={5}
+                  required
+                />
+                <button
+                  onClick={togglePasswordVisibility}
+                  className="absolute mt-1 top-1/2 right-2 transform -translate-y-1/2 cursor-pointer opacity-50"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                </button>
               </div>
             </div>
 
@@ -99,13 +105,25 @@ const togglePasswordVisibility = () => {
                 type="submit"
                 class={`flex justify-center items-center btn text-xl w-full mt-1 px-4 py-2 rounded-md bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200  font-semibold hover:bg-blue-600`}
               >
-                <span><img className="w-9" src={googlepng} alt="" /></span>Google
+                <span>
+                  <img className="w-9" src={googlepng} alt="" />
+                </span>
+                Google
               </button>
-              <p className=" my-4">By continuing you agree to our <span className="underline font-semibold cursor-pointer">Terms of Service</span> and <span className="underline font-semibold cursor-pointer">Privacy Policy</span></p>
+              <p className=" my-4">
+                By continuing you agree to our{" "}
+                <span className="underline font-semibold cursor-pointer">
+                  Terms of Service
+                </span>{" "}
+                and{" "}
+                <span className="underline font-semibold cursor-pointer">
+                  Privacy Policy
+                </span>
+              </p>
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </>
   );
 }

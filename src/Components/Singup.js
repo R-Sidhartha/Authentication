@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Authpage from "./Authpage";
-import bg from './bg.jpg'
-import googlepng from './googlpng.png'
+import bg from "./bg.jpg";
+import googlepng from "./googlpng.png";
 
-export default function Signup({isMobileView}) {
+export default function Signup({ isMobileView }) {
   const [credentials, setcredentials] = useState({
     Email: "",
     cpassword: "",
@@ -42,15 +42,18 @@ export default function Signup({isMobileView}) {
 
   return (
     <>
-      <div className={`signuppage flex justify-around ${isMobileView ?'flex-col items-center':''}`}>
+      <div
+        className={`signuppage flex justify-around ${
+          isMobileView ? "flex-col items-center" : ""
+        }`}
+      >
         <div className="leftdesign my-4">
           <Authpage bg={bg} />
         </div>
         <div
-          className={` my-4 flex flex-col items-center  ${isMobileView ?'w-3/4':'w-1/4'}`}
-          style={{
-            minHeight: "100vh",
-          }}
+          className={` my-4 flex flex-col items-center  ${
+            isMobileView ? "w-3/4" : "w-1/4"
+          }`}
         >
           <h1 className="text-3xl font-semibold my-4">Create Your account</h1>
           <form class="signupform w-full mt-5">
@@ -147,7 +150,10 @@ export default function Signup({isMobileView}) {
                 type="submit"
                 class={`btn text-xl flex justify-center items-center w-full mt-1 px-4 py-2 bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200 rounded-md bg-6b00d7-500  font-semibold hover:bg-blue-600`}
               >
-                <span><img className="w-9" src={googlepng} alt="" /></span>Google
+                <span>
+                  <img className="w-9" src={googlepng} alt="" />
+                </span>
+                Google
               </button>
               <p className=" my-4">
                 By continuing you agree to our{" "}
@@ -155,7 +161,9 @@ export default function Signup({isMobileView}) {
                   Terms of Service
                 </span>{" "}
                 and{" "}
-                <span className="underline font-semibold cursor-pointer">Privacy Policy</span>
+                <span className="underline font-semibold cursor-pointer">
+                  Privacy Policy
+                </span>
               </p>
             </div>
           </div>

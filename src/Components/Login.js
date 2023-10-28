@@ -52,7 +52,7 @@ const togglePasswordVisibility = () => {
               />
             </div>
 
-            <div class="mb-3 flex flex-col">
+            <div class="mt-5 mb-3 flex flex-col">
               <label
                 for="password"
                 class="flex text-xl font-medium text-gray-700"
@@ -65,7 +65,7 @@ const togglePasswordVisibility = () => {
                 class="form-input border border-gray-400 border-opacity-60 block w-full h-10 text-lg mt-3 rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-blue-500 focus:outline-none focus:border-blue-300"
                 id="password"
                 name="password"
-                placeholder="  password"
+                placeholder="  Password"
                 value={credentials.password}
                 onChange={onChange}
                 minLength={5}
@@ -80,7 +80,7 @@ const togglePasswordVisibility = () => {
 
             <button
               type="submit"
-              class={`btn block w-full mt-5 px-4 py-2 rounded-md bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200 text-lg font-semibold hover:bg-blue-600`}
+              class={`btn block w-full mt-7 px-4 py-2 rounded-md bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200 text-lg font-semibold hover:bg-blue-600`}
             >
               Login
             </button>

@@ -128,7 +128,7 @@ export default function Signup({isMobileView}) {
 
             <button
               type="submit"
-              class={`btn block w-full mt-5 px-4 py-2 rounded-md bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200 text-lg font-semibold hover:bg-blue-600`}
+              class={`btn block w-full mt-7 px-4 py-2 rounded-md bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200 text-lg font-semibold hover:bg-blue-600`}
             >
               Signup
             </button>

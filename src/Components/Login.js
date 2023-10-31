@@ -13,7 +13,8 @@ export default function Login({ isMobileView }) {
   //   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
-  const togglePasswordVisibility = () => {
+  const togglePasswordVisibility = (e) => {
+    e.preventDefault();
     setShowPassword(!showPassword);
   };
   const onChange = (e) => {
@@ -27,30 +28,30 @@ export default function Login({ isMobileView }) {
     <>
       <div
         className={`min-h-screen signuppage flex-row-reverse flex justify-around ${
-          isMobileView ? "flex-col items-center" : ""
+          isMobileView ? "flex-col-reverse items-center" : ""
         }`}
       >
         <div
           className={` my-4 ${
-            isMobileView ? "w-5/6" : "w-3/5"
+            isMobileView ? "invisible h-20" : "w-3/5"
           } mx-3 flex justify-center  items-cente bg-gradient-to-r from-blue-300 via-purple-500 to-blue-200 `}
         >
           <Authpage />
         </div>
         <div
-          className={` my-4 flex flex-col items-center mx-10 ${
-            isMobileView ? "w-3/4" : "w-2/5"
+          className={` flex flex-col items-center mx-10 ${
+            isMobileView ? "w-3/4" : "w-2/5 my-4 "
           }`}
         >
-          <div className="flex w-full items-center">
+          <div className={`flex ${isMobileView ? 'w-screen':'w-full '} items-center`}>
             <span className="w-1/6">
               <img className="w-20" src={logo} alt="" />
             </span>
-            <h1 className="text-2xl w-2/3 font-semibold">
+            <h1 className={`text-2xl font-semibold w-2/3 ${isMobileView ?'mx-1':''}`}>
               Login to Your Account
             </h1>
           </div>
-          <div className="w-3/4 mt-5">
+          <div className={`${isMobileView ? 'w-full':'w-3/4'} mt-5`}>
             <form class="w-full">
               <div class="mb-3 flex flex-col ">
                 <label

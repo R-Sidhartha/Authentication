@@ -40,7 +40,7 @@ export default function Login({ isMobileView }) {
         </div>
         <div
           className={` flex flex-col items-center mx-10 ${
-            isMobileView ? "w-3/4" : "w-2/5 my-4 "
+            isMobileView ? "w-3/4" : "w-auto my-4 "
           }`}
         >
           <div className={`flex ${isMobileView ? 'w-screen':'w-full '} items-center`}>
